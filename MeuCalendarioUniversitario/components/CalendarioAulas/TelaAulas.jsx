@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
 const API_URL = "http://localhost:3000";
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJub21lIjoiQW5kZXJzb24gU29hcmVzIiwiaWF0IjoxNzAwOTU0OTg3LCJleHAiOjE3MDEwNDEzODd9.bJFcazhWVocBZmqth91gnctulN37AmJX-7fv9oTnVLI"
-const idAluno = 1
 import axios from "axios";
 
 const TelaAulas = () => {
 
 	const atualizar = () => {
+		const token = localStorage.getItem("token")
+		const idAluno = localStorage.getItem("idAluno")
 		axios.get(`${API_URL}/calendario-aluno/${idAluno}`, {
 			headers: { Authorization: `Bearer ${token}` }
 		}).then(response => {

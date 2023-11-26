@@ -6,11 +6,13 @@ import { useEffect } from 'react'
 import styles from './styles'
 import axios from 'axios'
 const API_URL = "http://localhost:3000";
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJub21lIjoiQW5kZXJzb24gU29hcmVzIiwiaWF0IjoxNzAwOTYzNTg3LCJleHAiOjE3MDEwNDk5ODd9.cafeDzM4nqn5vnqdQaraH_5la1DbZZma-3GY-Oslb40"
-const idAluno = 1
+
+
 
 const AgendaPersonalizadaScreen = ({ navigation }) => {
   const atualizar = () => {
+    let token = localStorage.getItem("token")
+    let idAluno = localStorage.getItem("idAluno")
     axios.get(`${API_URL}/agenda-aluno/${idAluno}`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(response => {
