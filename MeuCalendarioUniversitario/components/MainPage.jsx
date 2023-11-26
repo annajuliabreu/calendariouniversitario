@@ -1,4 +1,5 @@
-import Home from "./AgendaPersonalizada/Home.jsx"
+// import Home from "./Teste/Home.jsx"
+import TelaAulas from "./CalendarioAulas/TelaAulas.jsx";
 
 import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
@@ -9,25 +10,11 @@ const NativeStack = createNativeStackNavigator()
 
 const MainPageProva = () => {
     return (
-        <View>
-            <Text>Teste</Text>
-            <NavigationContainer>
-                <NativeStack.Navigator screenOptions={{ headerShown: false }}>
-                    <NativeStack.Group>
-                        <NativeStack.Screen name="Agenda Personalizada" component={Home} />
-                    </NativeStack.Group>
-
-
-                    {/* <NativeStack.Group>
-                        <NativeStack.Screen name="Agenda Personalizada" component={Home} />
-                    </NativeStack.Group> */}
-
-
-
-                </NativeStack.Navigator>
-            </NavigationContainer>
-
-        </View>
+        <NavigationContainer>
+            <NativeStack.Navigator screenOptions={{ headerShown: false }}>
+                <NativeStack.Screen name="Calendário de Aulas" component={TelaAulas} />
+            </NativeStack.Navigator>
+        </NavigationContainer>
     );
 }
 

@@ -1,9 +1,9 @@
-import { View } from "react-native"
-import style from "./style"
+import { View, Text } from "react-native"
 
 const Home = ({ navigation }) => {
     return (
         <View >
+            <Text>Teste</Text>
         </View>
     )
 }
