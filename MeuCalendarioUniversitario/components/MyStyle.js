@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native"
 const myStyle = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: "#F3EAFF",
     },
     menu: {
         flex: 1,

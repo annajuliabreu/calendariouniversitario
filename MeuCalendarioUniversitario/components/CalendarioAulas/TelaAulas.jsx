@@ -35,7 +35,7 @@ const TelaAulas = () => {
 	const [aulas, setAulas] = useState([]);
 	useEffect(() => {
 		atualizar()
-	}, [aulas]);
+	}, []);
 
 	const [isModalVisible, setModalVisible] = useState(false);
 	const [novaDisciplina, setNovaDisciplina] = useState("");

@@ -1,13 +1,15 @@
-import { View, Button, TextInput, Text } from "react-native"
-import style from "./style"
-import axios from "axios"
 import { useState } from "react"
+import { View, Text, Image, TextInput, TouchableOpacity, } from 'react-native';
+import style from './style';
+import axios from "axios";
 
+const Login = () => {
 
-const Login = ({ navigation }) => {
-    const [usuario, setUsuario] = useState("")
-    const [senha, setSenha] = useState("")
+    // Estados para armazenar o e-mail e a senha inseridos pelo usuário
+    const [usuario, setUsuario] = useState('');
+    const [senha, setSenha] = useState('');
 
+    // Função para lidar com o clique no botão de login
     const handleLogin = () => {
         axios.post("http://localhost:3000/aluno/login", {
             usuarioAluno: usuario,
@@ -29,16 +31,47 @@ const Login = ({ navigation }) => {
 
             }
         })
-    }
+    };
 
     return (
-        <View >
-            <Text>Login</Text>
-            <TextInput placeholder="Usuário" onChangeText={text => setUsuario(text)} style={style.input} value={usuario} />
-            {/* Campo de senha, texto em * */}
-            <TextInput placeholder="Senha" onChangeText={text => setSenha(text)} style={style.input} value={senha} secureTextEntry={true} />
-            <Button title="Login" onPress={() => handleLogin()} />
+        <View style={style.container}>
+            <View style={style.image}>
+                <Image
+                    style={style.tinyLogo}
+                    source={{
+                        uri: 'https://github.com/annajuliabreu/mobile/blob/main/workspace/components/MeuCalendarioUniversitario/assets/Camada_1-2-2.png?raw=true',
+                    }}
+                />
+            </View>
+
+            <View>
+
+                <Text style={style.title}>Login</Text>
+
+                {/* Campo de entrada para o e-mail */}
+                <TextInput
+                    style={style.input}
+                    placeholder="Usuario"
+                    value={usuario}
+                    onChangeText={(text) => setUsuario(text)}
+                />
+
+                {/* Campo de entrada para a senha */}
+                <TextInput
+                    style={style.input}
+                    placeholder="Senha"
+                    secureTextEntry
+                    value={senha}
+                    onChangeText={(text) => setSenha(text)}
+                />
+
+                {/* Botão de login */}
+                <TouchableOpacity style={style.button} onPress={handleLogin}>
+                    <Text style={style.buttonText}>Entrar</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
-export default Login
+
+export default Login;

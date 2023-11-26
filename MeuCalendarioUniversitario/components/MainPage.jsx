@@ -2,6 +2,8 @@ import Home from "./Home.jsx";
 import TelaAulas from "./CalendarioAulas/TelaAulas.jsx";
 import AgendaPersonalizadaScreen from './AgendaPersonalizada/AgendaPersonalizadaScreen.jsx'
 import Login from "./Login/Login.jsx";
+import CalendarioLista from "./CalendarioLista/CalendarioLista.jsx";
+import EventosUniversitarios from "./EventosUniversitarios/EventosUniversitarios.jsx";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { Pressable } from "react-native";
 
@@ -41,6 +43,10 @@ const MainPageProva = () => {
                 />
                 <NativeStack.Screen name="CalendarioAulas" component={TelaAulas} options={{ title: "Calendário de Aulas" }} />
                 <NativeStack.Screen name="Agenda" component={AgendaPersonalizadaScreen} options={{ title: "Agenda" }} />
+                <NativeStack.Screen name="CalendarioLista" component={CalendarioLista} options={{ title: "Calendário de Aulas" }} />
+                <NativeStack.Screen name="EventosUniversitarios" component={EventosUniversitarios} options={{ title: "Eventos Universitários" }} />
+
+
                 <NativeStack.Screen name="Login" component={Login} options={{ title: "Login" }} />
             </NativeStack.Navigator>
         </NavigationContainer>

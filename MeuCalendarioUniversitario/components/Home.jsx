@@ -23,9 +23,14 @@ const Home = ({ navigation }) => {
                     <Text style={myStyle.textoPressable}>Agenda</Text>
                 </Pressable>
 
-                <Pressable onPress={() => navigation.navigate("Login")} style={myStyle.redirectButton} >
-                    <Text style={myStyle.textoPressable}>Login</Text>
+                <Pressable onPress={() => navigation.navigate("CalendarioLista")} style={myStyle.redirectButton} >
+                    <Text style={myStyle.textoPressable}>Calendário Universitário</Text>
                 </Pressable>
+
+                <Pressable onPress={() => navigation.navigate("EventosUniversitarios")} style={myStyle.redirectButton} >
+                    <Text style={myStyle.textoPressable}>Eventos Universitários</Text>
+                </Pressable>
+
             </View>
         </View>
     )

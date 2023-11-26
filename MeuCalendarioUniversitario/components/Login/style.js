@@ -1,22 +1,50 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
-const style = StyleSheet.create({
+const loginStyle = StyleSheet.create({
+    image: {
+        paddingBottom: 16,
+    },
+    tinyLogo: {
+        width: 265,
+        height: 52,
+    },
+    header: {
+        fontSize: 30,
+        fontweight: 'bold',
+        paddingBottom: 20,
+        color: '#D81159',
+        fontWeight: 'bold',
+    },
     container: {
         flex: 1,
-        backgroundColor: '#000',
-        width: '50vh',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+        backgroundColor: '#F0FEFF',
     },
-    texto: {
-        color: '#fff',
+    title: {
+        fontSize: 24,
+        marginBottom: 16,
     },
     input: {
         height: 40,
-        borderColor: "gray",
+        width: 250,
+        borderColor: 'gray',
         borderWidth: 1,
-        marginBottom: 10,
-        paddingLeft: 8,
+        borderRadius: 8,
+        marginBottom: 12,
+        paddingHorizontal: 8,
     },
-
+    button: {
+        backgroundColor: '#593B7F',
+        paddingVertical: 12,
+        paddingHorizontal: 24,
+        borderRadius: 8,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
+    },
 })
 
-export default style;
+export default loginStyle;

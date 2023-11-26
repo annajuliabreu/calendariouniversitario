@@ -34,7 +34,7 @@ const AgendaPersonalizadaScreen = ({ navigation }) => {
   const [eventos, setEventos] = useState([]);
   useEffect(() => {
     atualizar()
-  }, [eventos]);
+  }, []);
 
 
   const [isModalVisible, setModalVisible] = useState(false)
