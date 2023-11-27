@@ -1,4 +1,4 @@
-import { View, Text, Button, Pressable } from "react-native"
+import { View, Text, Pressable } from "react-native"
 import myStyle from "./MyStyle"
 import { useEffect } from "react"
 //checa se o token existe

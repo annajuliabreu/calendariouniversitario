@@ -3,14 +3,24 @@ import { View, Text, Pressable, FlatList, Modal, TextInput } from "react-native"
 import { useEffect } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import styles from "./styles";
-const API_URL = "http://localhost:3000";
+import { API_URL } from '@env'
 import axios from "axios";
+let token = localStorage.getItem("token")
+let idAluno = localStorage.getItem("idAluno")
 
 const TelaAulas = () => {
+	useEffect(() => {
+		atualizar()
+	}, []);
+
+	const [aulas, setAulas] = useState([]);
 
 	const atualizar = () => {
-		const token = localStorage.getItem("token")
-		const idAluno = localStorage.getItem("idAluno")
+		if (token == null || idAluno == null) {
+			token = localStorage.getItem("token")
+			idAluno = localStorage.getItem("idAluno")
+		}
+
 		axios.get(`${API_URL}/calendario-aluno/${idAluno}`, {
 			headers: { Authorization: `Bearer ${token}` }
 		}).then(response => {
@@ -26,16 +36,13 @@ const TelaAulas = () => {
 					sala: aula.sala_calendario,
 					bloco: aula.bloco_calendario,
 				})
-				setAulas(aulasAPI)
 			}
 			)
+			setAulas(aulasAPI)
 		});
 	}
 
-	const [aulas, setAulas] = useState([]);
-	useEffect(() => {
-		atualizar()
-	}, []);
+
 
 	const [isModalVisible, setModalVisible] = useState(false);
 	const [novaDisciplina, setNovaDisciplina] = useState("");
@@ -44,19 +51,21 @@ const TelaAulas = () => {
 	const [novaSala, setNovaSala] = useState("");
 	const [novoBloco, setNovoBloco] = useState("");
 	const [editar, setEditar] = useState(false);
+	const [aulaId, setAulaId] = useState("");
 
 	const handleDeleteAula = aulaId => {
 		axios.delete(`${API_URL}/calendario/${aulaId}`, {
 			headers: { Authorization: `Bearer ${token}` }
 		}).then(response => {
 			console.log(response)
-			atualizar()
+			atualizar();
 		});
 	};
 
 	const handleEditAula = (aulaId, disciplina, horarios, professor, sala, bloco) => {
 		setEditar(true);
 		setModalVisible(true);
+		setAulaId(aulaId);
 		setNovaDisciplina(disciplina);
 		setNovosHorarios(horarios.join(", "));
 		setNovoProfessor(professor);
@@ -92,16 +101,17 @@ const TelaAulas = () => {
 
 
 			setModalVisible(false);
-
 			// Limpar os campos do modal após salvar
 			setNovaDisciplina("");
 			setNovosHorarios("");
 			setNovoProfessor("");
 			setNovaSala("");
 			setNovoBloco("");
-			atualizar()
-
-
+			//espera 1 segundo para atualizar a tela
+			setTimeout(() => {
+				atualizar();
+			}
+				, 1000);
 		}
 	};
 
@@ -117,9 +127,8 @@ const TelaAulas = () => {
 			};
 
 			let stringHorarios = JSON.stringify(novaAula.horarios)
-			let aulaId = aulas[0].id
-			console.log(aulaId)
 			stringHorarios = stringHorarios.replace(/"/g, "'")
+
 			axios.put(`${API_URL}/calendario/${aulaId}`, {
 				idAlunoCalendario: idAluno,
 				horarioCalendario: stringHorarios,
@@ -142,7 +151,8 @@ const TelaAulas = () => {
 			setNovoProfessor("");
 			setNovaSala("");
 			setNovoBloco("");
-			atualizar()
+			atualizar();
+			atualizar();
 
 
 		}

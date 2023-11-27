@@ -2,6 +2,7 @@ import { useState } from "react"
 import { View, Text, Image, TextInput, TouchableOpacity, } from 'react-native';
 import style from './style';
 import axios from "axios";
+import { API_URL } from '@env'
 
 const Login = () => {
 
@@ -11,7 +12,7 @@ const Login = () => {
 
     // Função para lidar com o clique no botão de login
     const handleLogin = () => {
-        axios.post("http://localhost:3000/aluno/login", {
+        axios.post(`${API_URL}/aluno/login`, {
             usuarioAluno: usuario,
             senhaAluno: senha
         }).then((response) => {
@@ -45,7 +46,6 @@ const Login = () => {
             </View>
 
             <View>
-
                 <Text style={style.title}>Login</Text>
 
                 {/* Campo de entrada para o e-mail */}

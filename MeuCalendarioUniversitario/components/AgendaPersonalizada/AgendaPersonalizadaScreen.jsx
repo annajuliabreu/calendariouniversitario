@@ -5,14 +5,15 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { useEffect } from 'react'
 import styles from './styles'
 import axios from 'axios'
-const API_URL = "http://localhost:3000";
-
+import { API_URL } from '@env'
+let token = localStorage.getItem("token")
+let idAluno = localStorage.getItem("idAluno")
 
 
 const AgendaPersonalizadaScreen = ({ navigation }) => {
   const atualizar = () => {
-    let token = localStorage.getItem("token")
-    let idAluno = localStorage.getItem("idAluno")
+    token = localStorage.getItem("token")
+    idAluno = localStorage.getItem("idAluno")
     axios.get(`${API_URL}/agenda-aluno/${idAluno}`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(response => {
