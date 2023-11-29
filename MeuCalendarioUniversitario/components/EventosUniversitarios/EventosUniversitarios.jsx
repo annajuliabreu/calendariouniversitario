@@ -110,10 +110,6 @@ const EventosUniversitarios = () => {
 				}
 
 			})
-
-
-
-
 		}
 		)
 	}
@@ -124,7 +120,7 @@ const EventosUniversitarios = () => {
 
 	const renderItem = ({ item }) => (
 		<View style={styles.eventItem}>
-			<Ionicons name="school" size={24} color="#593B7F" />
+			<Ionicons name="school" size={24} color="#059669" />
 			<View style={styles.aulaInfo}>
 				<Text style={styles.eventText}>{item.data}</Text>
 				<Text>{`${item.evento}`}</Text>

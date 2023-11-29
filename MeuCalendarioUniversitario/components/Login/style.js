@@ -7,6 +7,7 @@ const loginStyle = StyleSheet.create({
     tinyLogo: {
         width: 265,
         height: 52,
+        marginBottom: 34,
     },
     header: {
         fontSize: 30,
@@ -25,6 +26,7 @@ const loginStyle = StyleSheet.create({
     title: {
         fontSize: 24,
         marginBottom: 16,
+        textAlign: 'center',
     },
     input: {
         height: 40,
@@ -36,7 +38,7 @@ const loginStyle = StyleSheet.create({
         paddingHorizontal: 8,
     },
     button: {
-        backgroundColor: '#593B7F',
+        backgroundColor: '#059669',
         paddingVertical: 12,
         paddingHorizontal: 24,
         borderRadius: 8,
@@ -44,6 +46,7 @@ const loginStyle = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontSize: 16,
+        textAlign: 'center',
     },
 })
 

@@ -3,14 +3,15 @@ import { StyleSheet } from "react-native"
 const myStyle = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#F3EAFF",
+        backgroundColor: '#F0FEFF',
+        // backgroundColor: "#F3EAFF",
     },
     menu: {
         flex: 1,
         padding: 20,
     },
     redirectButton: {
-        backgroundColor: "#593B7F",
+        backgroundColor: "#059669",
         padding: 10,
         color: "#fff",
         textAlign: "center",
@@ -22,6 +23,36 @@ const myStyle = StyleSheet.create({
         fontSize: 16,
         textAlign: "center",
     },
+    title: {
+        fontSize: 22,
+        textAlign: "left",
+    },
+    subtitle: {
+        fontSize: 13,
+        marginTop: 10,
+        textAlign: "left",
+    },
+    boasvindas: {
+        flexDirection: "row",
+        alignItems: "left",
+        width: "100%",
+    },
+    textos: {
+        //in column
+        margin: 20,
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "left",
+    },
+    calendario: {
+        height: 60,
+        width: 80,
+        marginTop: 25,
+    },
+    notificacoes: {
+        alignSelf: "flex-end",
+        margin: 20,
+    }
 })
 
 export default myStyle

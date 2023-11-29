@@ -1,8 +1,11 @@
-import { View, Text, Pressable } from "react-native"
+import { View, Text, Pressable, Image } from "react-native"
 import myStyle from "./MyStyle"
 import { useEffect } from "react"
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
 //checa se o token existe
 const token = localStorage.getItem("token")
+let nomeAluno = localStorage.getItem("nomeAluno")
 
 const Home = ({ navigation }) => {
     useEffect(() => {
@@ -13,6 +16,18 @@ const Home = ({ navigation }) => {
 
     return (
         <View style={myStyle.container}>
+            <View style={myStyle.boasvindas}>
+                <View style={myStyle.textos}>
+                    <Text style={myStyle.title}>Olá, <b>{nomeAluno}</b>,</Text>
+                    <Text style={myStyle.title}>Seja bem-vindo(a)!</Text>
+                    <Text style={myStyle.subtitle}>Escolha uma das opções abaixo</Text>
+                </View>
+                <Image
+                    style={myStyle.calendario}
+                    source={require('../assets/calendario.png')}
+                />
+            </View>
+
             <View style={myStyle.menu}>
 
                 <Pressable onPress={() => navigation.navigate("CalendarioAulas")} style={myStyle.redirectButton} >
@@ -32,6 +47,12 @@ const Home = ({ navigation }) => {
                 </Pressable>
 
             </View>
+            <View style={myStyle.notificacoes}>
+                <Pressable onPress={() => navigation.navigate("Lembretes")} >
+                    <Ionicons name="notifications-circle-outline" size={50} color="#059669" />
+                </Pressable>
+            </View>
+
         </View>
     )
 }

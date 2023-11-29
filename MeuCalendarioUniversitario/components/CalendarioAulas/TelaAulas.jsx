@@ -172,7 +172,7 @@ const TelaAulas = () => {
 	const renderItem = ({ item }) => (
 
 		<View style={styles.eventItem}>
-			<Ionicons name="school" size={24} color="#593B7F" />
+			<Ionicons name="school" size={24} color="#059669" />
 			<View style={styles.aulaInfo}>
 				<Text style={styles.eventText}>{item.disciplina}</Text>
 				<Text>{`Horários: ${item.horarios.join(", ")}`}</Text>
@@ -180,10 +180,10 @@ const TelaAulas = () => {
 				<Text>{`Sala: ${item.sala} ${item.bloco}`}</Text>
 			</View>
 			<Pressable onPress={() => handleEditAula(item.id, item.disciplina, item.horarios, item.professor, item.sala, item.bloco)}>
-				<Ionicons name="create-outline" size={24} color="#593B7F" />
+				<Ionicons name="create-outline" size={24} color="black" />
 			</Pressable>
 			<Pressable onPress={() => handleDeleteAula(item.id)}>
-				<Ionicons name="trash-outline" size={24} color="#593B7F" />
+				<Ionicons name="trash-outline" size={24} color="#B00" />
 			</Pressable>
 		</View>
 	);
@@ -221,7 +221,7 @@ const TelaAulas = () => {
 								<Text style={styles.saveButtonText}>Adicionar</Text>
 							</Pressable>
 						)}
-						<Pressable onPress={toggleModal} style={styles.saveButton}>
+						<Pressable onPress={toggleModal} style={styles.cancelButton}>
 							<Text style={styles.saveButtonText}>Cancelar</Text>
 						</Pressable>
 					</View>

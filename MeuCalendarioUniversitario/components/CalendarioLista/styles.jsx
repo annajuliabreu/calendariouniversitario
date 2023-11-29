@@ -6,22 +6,14 @@ export default StyleSheet.create({
 
 	container: {
 		flex: 1,
-		backgroundColor: "#F3EAFF",
+		backgroundColor: '#F0FEFF',
+		// backgroundColor: "#F3EAFF",
 		padding: 16,
 	},
 
-	eventItem: {
-		flexDirection: "row",
-		justifyContent: "space-between",
-		alignItems: "center",
-		backgroundColor: "#FFFFFF",
-		padding: 10,
-		marginVertical: 8,
-		borderRadius: 5,
-	},
 
 	eventText: {
-		color: "#593B7F",
+		color: "#000",
 		fontSize: 16,
 	},
 
@@ -43,11 +35,11 @@ export default StyleSheet.create({
 	title: {
 		fontSize: 20,
 		fontWeight: "bold",
-		color: "#593B7F",
+		color: "#000",
 	},
 
 	addButton: {
-		backgroundColor: "#593B7F",
+		backgroundColor: "#059669",
 		padding: 10,
 		borderRadius: 5,
 	},
@@ -65,20 +57,22 @@ export default StyleSheet.create({
 		padding: 10,
 		marginVertical: 8,
 		borderRadius: 5,
+		borderWidth: 1,
+		borderColor: '#D1D5DB',
 	},
 
 	eventText: {
-		color: "#593B7F",
+		color: "#059669",
 		fontSize: 16,
 	},
 
 	editButton: {
-		color: "#593B7F",
+		color: "#059669",
 		fontSize: 16,
 	},
 
 	deleteButton: {
-		color: "#593B7F",
+		color: "#059669",
 		fontSize: 16,
 	},
 
@@ -104,7 +98,7 @@ export default StyleSheet.create({
 	},
 
 	saveButton: {
-		backgroundColor: "#593B7F",
+		backgroundColor: "#059669",
 		padding: 10,
 		borderRadius: 5,
 		marginTop: 10,

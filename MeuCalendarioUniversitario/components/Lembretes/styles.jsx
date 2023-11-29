@@ -20,6 +20,11 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
   },
+  subtitle: {
+    fontSize: 15,
+    color: '#000',
+    textAlign: 'left',
+  },
 
   addButton: {
     backgroundColor: '#059669',
@@ -33,17 +38,8 @@ export default StyleSheet.create({
   },
 
   eventText: {
-    color: '#000',
-    fontSize: 16,
-  },
-
-  editButton: {
-    color: '#059669',
-    fontSize: 16,
-  },
-
-  deleteButton: {
-    color: '#059669',
+    // color: '#000',
+    color: '#fff',
     fontSize: 16,
   },
 
@@ -57,13 +53,10 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#059669",
     padding: 10,
     marginVertical: 8,
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#D1D5DB',
-
   },
   eventInfo: {
     flex: 1,
@@ -78,21 +71,25 @@ export default StyleSheet.create({
   },
 
   input: {
+    backgroundColor: '#FFFFFF',
+    color: '#000',
+    fontWeight: 'bold',
     height: 40,
     borderColor: 'gray',
+    width: '10%',
+    borderRadius: 5,
     borderWidth: 1,
-    marginBottom: 10,
+    margin: 10,
     paddingLeft: 8,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 
   saveButton: {
     backgroundColor: '#059669',
-    padding: 10,
-    borderRadius: 5,
-    marginTop: 10,
-  },
-  cancelButton: {
-    backgroundColor: "#999",
     padding: 10,
     borderRadius: 5,
     marginTop: 10,

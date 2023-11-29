@@ -4,6 +4,7 @@ import AgendaPersonalizadaScreen from './AgendaPersonalizada/AgendaPersonalizada
 import Login from "./Login/Login.jsx";
 import CalendarioLista from "./CalendarioLista/CalendarioLista.jsx";
 import EventosUniversitarios from "./EventosUniversitarios/EventosUniversitarios.jsx";
+import Lembretes from "./Lembretes/Lembretes.jsx";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { Pressable } from "react-native";
 
@@ -28,7 +29,7 @@ const MainPageProva = () => {
                     options={{
                         title: "Meu Calendário Universitário",
                         headerStyle: {
-                            backgroundColor: "#593B7F",
+                            backgroundColor: "#059669",
                         },
                         headerTintColor: "#fff",
                         headerTitleStyle: {
@@ -41,13 +42,61 @@ const MainPageProva = () => {
                         ),
                     }}
                 />
-                <NativeStack.Screen name="CalendarioAulas" component={TelaAulas} options={{ title: "Calendário de Aulas" }} />
-                <NativeStack.Screen name="Agenda" component={AgendaPersonalizadaScreen} options={{ title: "Agenda" }} />
-                <NativeStack.Screen name="CalendarioLista" component={CalendarioLista} options={{ title: "Calendário de Aulas" }} />
-                <NativeStack.Screen name="EventosUniversitarios" component={EventosUniversitarios} options={{ title: "Eventos Universitários" }} />
+                <NativeStack.Screen name="CalendarioAulas" component={TelaAulas} options={{
+                    title: "Calendário de Aulas", headerStyle: {
+                        backgroundColor: "#059669",
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                }} />
+                <NativeStack.Screen name="Agenda" component={AgendaPersonalizadaScreen} options={{
+                    title: "Agenda", headerStyle: {
+                        backgroundColor: "#059669",
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                }} />
+                <NativeStack.Screen name="CalendarioLista" component={CalendarioLista} options={{
+                    title: "Calendário Universitário", headerStyle: {
+                        backgroundColor: "#059669",
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                }} />
+                <NativeStack.Screen name="EventosUniversitarios" component={EventosUniversitarios} options={{
+                    title: "Eventos Universitários", headerStyle: {
+                        backgroundColor: "#059669",
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                }} />
+                <NativeStack.Screen name="Lembretes" component={Lembretes} options={{
+                    title: "Lembretes", headerStyle: {
+                        backgroundColor: "#059669",
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                }} />
 
-
-                <NativeStack.Screen name="Login" component={Login} options={{ title: "Login" }} />
+                <NativeStack.Screen name="Login" component={Login} options={{
+                    title: "Login", headerStyle: {
+                        backgroundColor: "#059669",
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                }} />
             </NativeStack.Navigator>
         </NavigationContainer>
     );

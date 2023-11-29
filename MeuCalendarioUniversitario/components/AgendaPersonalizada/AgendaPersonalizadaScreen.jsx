@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { View, Text, Pressable, FlatList, Modal, TextInput } from 'react-native'
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { useEffect } from 'react'
 import styles from './styles'
@@ -163,7 +163,7 @@ const AgendaPersonalizadaScreen = ({ navigation }) => {
         <Ionicons
           name={item.completed ? 'checkbox' : 'checkbox-outline'}
           size={24}
-          color="#593B7F"
+          color="#059669"
           onPress={() => handleToggleComplete(item.id)}
         />
         <View style={styles.eventInfo}>
@@ -172,10 +172,11 @@ const AgendaPersonalizadaScreen = ({ navigation }) => {
           <Text style={styles.eventText}>{`${item.date.substring(8, 10)}/${item.date.substring(5, 7)}/${item.date.substring(0, 4)}`}</Text>
         </View>
         <Pressable onPress={() => handleEditEvent(item.id, item.title, item.date)}>
-          <MaterialIcons name="edit" size={24} color="#593B7F" />
+          <Ionicons name="create-outline" size={24} color="black" />
+
         </Pressable>
         <Pressable onPress={() => handleDeleteEvent(item.id)}>
-          <Ionicons name="trash" size={24} color="#593B7F" />
+          <Ionicons name="trash" size={24} color="#B00" />
         </Pressable>
       </View>
     </>
@@ -231,7 +232,7 @@ const AgendaPersonalizadaScreen = ({ navigation }) => {
                 <Text style={styles.saveButtonText}>Adicionar</Text>
               </Pressable>
             )}
-            <Pressable onPress={toggleModal} style={styles.saveButton}>
+            <Pressable onPress={toggleModal} style={styles.cancelButton}>
               <Text style={styles.saveButtonText}>Cancelar</Text>
             </Pressable>
           </View>

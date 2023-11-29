@@ -26,7 +26,7 @@ const Login = () => {
                 //Adiciona o id do aluno no local storage
                 localStorage.setItem("idAluno", response.data.id)
                 //Adiciona o nome do aluno no local storage
-                localStorage.setItem("nomeAluno", response.data.nomeAluno)
+                localStorage.setItem("nomeAluno", response.data.nome)
 
                 navigation.navigate("Home")
 
