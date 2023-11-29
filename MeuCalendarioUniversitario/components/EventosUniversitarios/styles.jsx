@@ -1,17 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-	// AULAS SCREEN
-
-	eventItem: {
-		flexDirection: "row",
-		justifyContent: "space-between",
-		alignItems: "center",
-		backgroundColor: "#FFFFFF",
-		padding: 10,
-		marginVertical: 8,
-		borderRadius: 5,
-	},
 
 	eventText: {
 		color: "#000",
@@ -59,10 +48,11 @@ export default StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		backgroundColor: "#FFFFFF",
 		padding: 10,
 		marginVertical: 8,
 		borderRadius: 5,
+		borderWidth: 1,
+		borderColor: '#D1D5DB',
 	},
 
 	eventText: {

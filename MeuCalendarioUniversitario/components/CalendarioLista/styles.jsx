@@ -53,7 +53,6 @@ export default StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		backgroundColor: "#FFFFFF",
 		padding: 10,
 		marginVertical: 8,
 		borderRadius: 5,
